@@ -5,7 +5,7 @@
 # 
 
 
-OBJ := BinaryTreeNode.class BinarySearchTree.class GraphvizView.class INode.class ITree.class
+OBJ := BinaryTreeNode.class BinarySearchTree.class GraphvizView.class INode.class ITree.class SampleMain.class
 
 all: $(OBJ)
 
