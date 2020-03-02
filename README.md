@@ -2,7 +2,7 @@
 
 Invitation link: https://classroom.github.com/a/f4jD3Kna
 
-Assignment description: 
+Assignment description: https://unomaha.instructure.com/courses/30257/assignments/381550
 
 ---
 ## Starter code
