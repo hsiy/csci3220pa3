@@ -11,6 +11,8 @@
 // boolean isEmpty( )     --> Return true if empty; else false
 // void makeEmpty( )      --> Remove all items
 // void printTree( )      --> Print tree in sorted order
+// public int height( )   --> Return height of the tree
+// public BinaryNode<AnyType> getRoot()  --> Return the root of the tree
 // ******************ERRORS********************************
 // Throws UnderflowException as appropriate
 
@@ -19,7 +21,7 @@
  * Note that all "matching" is based on the compareTo method.
  * @author Mark Allen Weiss
  */
-public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
+public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> implements ITree<AnyType>
 {
     /**
      * Construct the tree.
@@ -102,9 +104,10 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
     public void printTree( )
     {
         if( isEmpty( ) )
-            System.out.println( "Empty tree" );
+            System.out.print( "Empty tree" );
         else
             printTree( root );
+        System.out.println( );
     }
 
     /**
@@ -214,9 +217,18 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         if( t != null )
         {
             printTree( t.left );
-            System.out.println( t.element );
+            System.out.print( t.element );
+            System.out.print( " " );
             printTree( t.right );
         }
+    }
+
+    /**
+     * Compute height of the tree.
+     */
+    public int height()
+    {
+        return height( root );
     }
 
     /**
@@ -230,38 +242,40 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         else
             return 1 + Math.max( height( t.left ), height( t.right ) );    
     }
-    
+
     // Basic node stored in unbalanced binary search trees
-    private static class BinaryNode<AnyType>
+    private static class BinaryNode<AnyType> extends BinaryTreeNode<AnyType,BinaryNode<AnyType>> 
     {
-            // Constructors
         BinaryNode( AnyType theElement )
         {
-            this( theElement, null, null );
+            super( theElement );
         }
 
         BinaryNode( AnyType theElement, BinaryNode<AnyType> lt, BinaryNode<AnyType> rt )
         {
-            element  = theElement;
-            left     = lt;
-            right    = rt;
+            super( theElement, lt, rt);
         }
 
-        AnyType element;            // The data in the node
-        BinaryNode<AnyType> left;   // Left child
-        BinaryNode<AnyType> right;  // Right child
     }
+
 
 
       /** The tree root. */
     private BinaryNode<AnyType> root;
+
+    /**
+     * Return the root of the tree
+     */
+    public BinaryNode<AnyType> getRoot() {
+        return root;
+    }
 
 
         // Test program
     public static void main( String [ ] args )
     {
         BinarySearchTree<Integer> t = new BinarySearchTree<>( );
-        final int NUMS = 4000;
+        final int NUMS = 30;
         final int GAP  =   37;
 
         System.out.println( "Checking... (no more output means success)" );
@@ -288,4 +302,3 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>>
         }
     }
 }
-
