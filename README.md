@@ -13,9 +13,9 @@ SampleMain.java illustrates how one might use GraphvizView along with the Binary
 
 To enable these, I created a series of interfaces and abstract classes to encapsulate the BST implementations:
 
-![Starter code structure](https://yuml.me/diagram/plain;dir:TD/class/[BinaryTreeNode]-.-implements%5E[INode],%20[BinarySearchTree]-.-implements%5E[ITree],%20[BinarySearchTree]%3C%3E-%3E[BinarySearchTree.BinaryNode],%20[BinarySearchTree.BinaryNode]-%5E[BinaryTreeNode],%20[GraphvizView]-uses-%3E[INode],%20[GraphvizView]-uses-%3E[BinarySearchTree],%20[SampleMain]-uses-%3E[ITree],%20[SampleMain]-uses-%3E[GraphvizView])
+![Starter code structure](https://yuml.me/diagram/plain;dir:TD/class/[BinaryTreeNode]-.-implements%5E[INode],%20[BinarySearchTree]-.-implements%5E[ITree],%20[BinarySearchTree]%3C%3E-%3E[BinarySearchTree.BinaryNode],%20[BinarySearchTree.BinaryNode]-%5E[BinaryTreeNode],%20[GraphvizView]uses-%3E[INode],%20[GraphvizView]uses-%3E[BinarySearchTree],%20[SampleMain]uses-%3E[ITree],%20[SampleMain]uses-%3E[GraphvizView])
 
 <!---
 Original code passed to yuml.me:
-https://yuml.me/diagram/plain;dir:TD/class/[BinaryTreeNode]-.-implements^[INode], [BinarySearchTree]-.-implements^[ITree], [BinarySearchTree]<>->[BinarySearchTree.BinaryNode], [BinarySearchTree.BinaryNode]-^[BinaryTreeNode], [GraphvizView]-uses->[INode], [GraphvizView]-uses->[BinarySearchTree], [SampleMain]-uses->[ITree], [SampleMain]-uses->[GraphvizView]
+https://yuml.me/diagram/plain;dir:TD/class/[BinaryTreeNode]-.-implements^[INode], [BinarySearchTree]-.-implements^[ITree], [BinarySearchTree]<>->[BinarySearchTree.BinaryNode], [BinarySearchTree.BinaryNode]-^[BinaryTreeNode], [GraphvizView]uses->[INode], [GraphvizView]uses->[BinarySearchTree], [SampleMain]uses->[ITree], [SampleMain]uses->[GraphvizView]
 --->
